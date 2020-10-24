@@ -25,12 +25,14 @@ class FibonacciAnalizer
 
  private:
   void readFile();
-  void printV();
+  void printReadFile();
   void printS();
   void closeFiles();
   void makeSecuenceSet();
   void makeSecuenceVector();
-
+  void exportToFile();
+  void printTest();
+  int findInVector(std::string &aux);
 };
 
 

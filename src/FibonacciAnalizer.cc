@@ -9,7 +9,11 @@ FibonacciAnalizer::FibonacciAnalizer(std::string in, std::string out) {
     fileIn_ = std::ifstream(in);
     fileOut_ = std::ofstream(out);
     readFile();
-    printV();
+    // printReadFile();
+    makeSecuenceVector();
+    // printTest();
+    exportToFile();
+    
   }
   catch ( std::exception& e) {
     std::cout << "Failed to load file" << e.what() << std::endl;
@@ -18,25 +22,31 @@ FibonacciAnalizer::FibonacciAnalizer(std::string in, std::string out) {
 
 void FibonacciAnalizer::readFile() {
   std::string aux;
-  if(fileIn_.is_open()) {
-    do {
-      fileIn_  >> aux;
-      vString_.push_back(aux);
-      if( (int)aux.size() > longMax_ )
-        longMax_ = aux.size();
+  try {
+    if(fileIn_.is_open() && fileIn_) {
+      while( !fileIn_.eof()) {
+        fileIn_ >> aux;
+        if( fileIn_.eof()) break;
+        vString_.push_back(aux);
+        if( (int)aux.size() > longMax_ )
+          longMax_ = aux.size();
+      }
     }
-    while( !fileIn_.eof());
-    
+    else {
+      std::cerr << "Nombre de fichero erroneo. " << std::endl;
+    }
+       
   }
+  catch ( std::exception& e) {
+    std::cout << "Failed to read file" << e.what() << std::endl;
+  }  
 }
 
-void FibonacciAnalizer::printV(){
+void FibonacciAnalizer::printReadFile(){
   for (uint i = 0; i < vString_.size(); i++) {
     std::cout << vString_[i] << " ";
   }
   std::cout << "\n";
-
-  makeSecuenceVector();
   
 }
 
@@ -61,11 +71,11 @@ FibonacciAnalizer::~FibonacciAnalizer() {
 void FibonacciAnalizer::closeFiles() {
   if(fileIn_.is_open()) {
     fileIn_.close();
-    std::cout << "Cerrado FILEIN\n";
+
   }
   if(fileOut_.is_open()) {
     fileOut_.close();
-    std::cout << "Cerrado FILEOUT\n";
+ 
   }
 }
 
@@ -105,11 +115,45 @@ void FibonacciAnalizer::makeSecuenceVector() {
     longGenerate = temp.size();
   }
 
-  std::cout << "IMPRIMIENDO VECTOR FIBO" << std::endl;
-  for (int i = 0; i < vFibonacci_.size(); i++) {
-    std::cout << vFibonacci_[i] << " ";
-  }
   
-
 }
 
+int FibonacciAnalizer::findInVector(std::string &aux) {
+  for (int i = 0; i < (int)vFibonacci_.size(); i++) {
+    if(vFibonacci_[i] == aux) {
+      return i+1;
+    }
+  }
+  return -1;  
+}
+
+void FibonacciAnalizer::exportToFile() {
+  try {
+    int site=0;
+    for (int i = 0; i < (int)vString_.size(); i++) {
+      site = findInVector(vString_[i]);
+      if( site != -1) {
+          fileOut_ << vString_[i] << " is the word number " << site << "\n";
+        }
+        else {
+          fileOut_ << vString_[i] << " is not a Fibonacci word\n";
+        }
+      }
+  }
+  catch ( std::exception& e) {
+    std::cout << "Failed to save in file" << e.what() << std::endl;
+  }
+}
+
+void FibonacciAnalizer::printTest() {
+  int site=0;
+  for (int i = 0; i < (int)vString_.size(); i++) {
+    site = findInVector(vString_[i]);
+    if( site != -1) {
+      std::cout << vString_[i] << " is the word number " << site << std::endl;
+    }
+    else {
+      std::cout << vString_[i] << " is not a Fibonacci word" << std::endl;
+    }
+  }
+}

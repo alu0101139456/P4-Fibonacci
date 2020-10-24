@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
 
 
   if ( argc == 2 ) {
-    FibonacciAnalizer( argv[1],"" );
+    FibonacciAnalizer( argv[1],"output.txt" );
   }
   else if ( argc == 3) {
     FibonacciAnalizer( argv[1], argv[2]);
