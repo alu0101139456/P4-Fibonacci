@@ -10,14 +10,14 @@ LIBRARIES	:=
 EXECUTABLE	:= fibonacci_word
 
 
-all: $(BIN)/$(EXECUTABLE)
+all: $(BIN)/$(EXECUTABLE) input.txt
 
 run: clean all
 	clear
-	./$(BIN)/$(EXECUTABLE)
+	./$(BIN)/$(EXECUTABLE) 
 
 $(BIN)/$(EXECUTABLE): $(SRC)/*.cc
 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) -L$(LIB) $^ -o $@ $(LIBRARIES)
 
 clean:
-	-rm $(BIN)/*
+	-rm $(BIN)/fibonacci_word
