@@ -1,3 +1,16 @@
+/*
+* Universidad de La Laguna
+* Escuela Superior de Ingeniería y Tecnología
+* Grado en Ingeniería Informática
+* Computabilidad y Algoritmia
+*
+* @author: Ángel Julián Bolaño Campos
+* @e-mail:  alu0101139456@ull.edu.es
+* @compilation: make
+* @date: 27 octubre 2020
+* @brief: Read input file and generate an output file indicating if the read words belong to the Fibonacci sequence  
+*/
+
 #include <iostream>
 #include "FibonacciAnalizer.h"
 #include <string>

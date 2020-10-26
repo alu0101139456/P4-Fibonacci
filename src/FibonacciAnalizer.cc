@@ -51,19 +51,6 @@ void FibonacciAnalizer::printReadFile(){
 }
 
 
-void FibonacciAnalizer::printS(){
-
-  std::set<std::string>::iterator it = sString_.begin();
-  while (it != sString_.end()) {
-    std::cout << (*it) << std::endl;
-    it++;
-  }
-  
-  
-  std::cout << "\n";
-  
-}
-
 FibonacciAnalizer::~FibonacciAnalizer() {
   closeFiles();
 }
@@ -79,24 +66,24 @@ void FibonacciAnalizer::closeFiles() {
   }
 }
 
-void FibonacciAnalizer::makeSecuenceSet() {
-  int longGenerate = 0;
-  std::string wo1 = vString_[0];
-  std::string wo2 = vString_[1];
-  //Insert to set first words
-  sString_.insert(wo1);
-  sString_.insert(wo2);
-  std::string temp;
-  //Only make until max size of read file;
-  while (longGenerate <= longMax_) {
-    temp = wo1 + wo2;
-    sString_.insert(temp);
-    wo1 = wo2;
-    wo2 = temp;    
-    longGenerate = temp.size();
-  }
+// void FibonacciAnalizer::makeSecuenceSet() {
+//   int longGenerate = 0;
+//   std::string wo1 = vString_[0];
+//   std::string wo2 = vString_[1];
+//   //Insert to set first words
+//   sString_.insert(wo1);
+//   sString_.insert(wo2);
+//   std::string temp;
+//   //Only make until max size of read file;
+//   while (longGenerate <= longMax_) {
+//     temp = wo1 + wo2;
+//     sString_.insert(temp);
+//     wo1 = wo2;
+//     wo2 = temp;    
+//     longGenerate = temp.size();
+//   }
 
-}
+// }
 
 void FibonacciAnalizer::makeSecuenceVector() {
   int longGenerate = 0;
