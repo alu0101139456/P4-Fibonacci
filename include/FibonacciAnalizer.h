@@ -6,8 +6,7 @@
     *@title Palabras de Fibonacci
 */
 
-// #ifdef FIBOANALIZER_H
-// #define FIBOANALIZER_H
+#pragma once
 
 #include <fstream>
 #include <iostream>
@@ -25,13 +24,13 @@ class FibonacciAnalizer
 
  public:
 /**
-  *@brief Default builder.
+    *@brief Default builder.
 */
   FibonacciAnalizer() {};
 /**
-  *@brief Principal builder. M
-  *@param in Name of file in.
-  *@param out Name of file out - "output.txt" as default
+    *@brief Principal builder. M
+    *@param in Name of file in.
+    *@param out Name of file out - "output.txt" as default
 */
   FibonacciAnalizer(std::string in, std::string out="output.txt");
 /**
@@ -41,47 +40,46 @@ class FibonacciAnalizer
 
  private:
 /**
- * @brief Open the file and if everything is correct, put the content in a vector
+    * @brief Open the file and if everything is correct, put the content in a vector
 */
   void readFile();
 /**
-  * @brief Print what was read on the screen
+    * @brief Print what was read on the screen
 */
   void printReadFile();
 /**
-  * @brief Verify that the files are closed
+    * @brief Verify that the files are closed
 */
   void closeFiles();
 
 /**
-  * @brief Use the first two characters read to generate the sequence and put it in a vector
+    * @brief Use the first two characters read to generate the sequence and put it in a vector
 */
   void makeSecuenceVector();
   
 /**
-  * @brief Export to file 
+    * @brief Export to file 
 */ 
 
 /**
-  * @brief Export to file putting if it belongs to the sequence
+    * @brief Export to file putting if it belongs to the sequence
 */
   void exportToFile();
 
 /**
-  * @brief Print on screen putting if it belongs to the sequence
+    * @brief Print on screen putting if it belongs to the sequence
 */
   void printTest();
 
 /**
- * @brief Search the vector for a certain word
- * 
- * @param aux The word to find
- * @return int The position in vector
- */
+   * @brief Search the vector for a certain word
+   * 
+   * @param aux The word to find
+   * @return int The position in vector
+*/
   int findInVector(std::string &aux);
 };
 
 
 
 
-// #endif

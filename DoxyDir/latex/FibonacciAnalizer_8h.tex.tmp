@@ -1,0 +1,25 @@
+\hypertarget{FibonacciAnalizer_8h}{}\section{include/\+Fibonacci\+Analizer.h File Reference}
+\label{FibonacciAnalizer_8h}\index{include/\+Fibonacci\+Analizer.\+h@{include/\+Fibonacci\+Analizer.\+h}}
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Fibonacci\+Analizer.\+h\+:
+% FIG 0
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classFibonacciAnalizer}{Fibonacci\+Analizer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+26/10/2020 
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+Ángel Julián Bolaño Campos  Palabras de Fibonacci 
+\end{DoxyAuthor}
