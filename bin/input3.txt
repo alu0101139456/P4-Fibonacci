@@ -1,0 +1,7 @@
+hello
+world
+helloworld
+worldhellowordl
+a
+b
+ab

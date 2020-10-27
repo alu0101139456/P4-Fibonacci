@@ -123,7 +123,7 @@ void FibonacciAnalizer::exportToFile() {
           fileOut_ << vString_[i] << " is the word number " << site << "\n";
         }
         else {
-          fileOut_ << vString_[i] << " is not a Fibonacci word\n";
+          fileOut_ << vString_[i] << " in position " << i + 1 << " is not a Fibonacci word\n";
         }
       }
   }
@@ -140,7 +140,7 @@ void FibonacciAnalizer::printTest() {
       std::cout << vString_[i] << " is the word number " << site << std::endl;
     }
     else {
-      std::cout << vString_[i] << " is not a Fibonacci word" << std::endl;
+      std::cout << vString_[i] << " in position " << i + 1 << " is not a Fibonacci word" << std::endl;
     }
   }
 }

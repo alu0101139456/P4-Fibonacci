@@ -1,6 +1,6 @@
-a is the word number 1
-b is the word number 2
-ba is not a Fibonacci word
-aaa is not a Fibonacci word
-bb is not a Fibonacci word
-bababbab is the word number 6
+hello is the word number 1
+world is the word number 2
+helloworld is the word number 3
+worldhellowordl in position 4 is not a Fibonacci word
+a in position 5 is not a Fibonacci word
+b in position 6 is not a Fibonacci word
